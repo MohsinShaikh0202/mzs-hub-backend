@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/get-user-list', [UserController::class, 'getUserList']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
+Route::post('send-otp', [AuthController::class, 'sendOtp']);
+Route::post('verify-otp', [AuthController::class, 'verifyOtp']);
